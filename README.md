@@ -34,6 +34,40 @@ Additionally, to supplement the low dimensional representations, methods for int
 
 While industry applications typically focus on 3D geometries, the computational overhead and data availability present unnecessary challenges that obscure the core research aims. By focusing on 2D shapes, this project can systematically explore and compare AI-based encoding methods without being constrained by the computational demands of 3D simulations.
 
+## Optimisation Problem
+As part of this research project, a simple optimisation problem will be used to demonstrate the limitations and principles of design space optimisation and the benefits realised by moving the optimisation  problem to a low-dimensional latent space. The optimisation problem chosen will be to minimise the perimeter to area ratio of 2D shapes. This is analogous to a more commonly optimised metric of surface-area to volume ratio which relates to heat from a solid body.
+
+## 📏 Perimeter-to-Area Ratio (P/A Ratio)
+
+The **Perimeter-to-Area Ratio** is a geometric measure that describes the relationship between the perimeter and the area of a 2D shape. It is commonly used to analyze the efficiency of shapes in applications like heat transfer, where minimizing the ratio can reduce heat loss.
+
+### Formula:
+
+```
+P/A Ratio = P / A
+```
+
+Where:
+- **P** = Perimeter of the shape (e.g., in meters)
+- **A** = Area of the shape (e.g., in square meters)
+
+### Significance:
+
+- **Higher P/A Ratio**: Greater heat loss (e.g., thin or irregular shapes lose heat faster).
+- **Lower P/A Ratio**: Reduced heat loss (e.g., more compact shapes like circles are thermally efficient).
+
+### Example Calculation (Circle):
+
+For a circle with radius **r**:
+
+```
+P = 2πr
+A = πr²
+P/A Ratio = (2πr) / (πr²) = 2 / r
+```
+
+This shows that as the radius increases, the **P/A ratio** decreases, reducing the rate of heat loss.
+
 
 ## Significance of the Research
 
