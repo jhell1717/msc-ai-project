@@ -77,9 +77,9 @@ Generative models have become pivotal in engineering due to their ability to com
 
 The outcomes of this project aim to advance the use of AI-driven geometry encoding for engineering design, offering scalable solutions for rapid and efficient design exploration.
 
-## Motivating Literature
-
-
-
-
+## Some Motivating Literature
+- Tripp, A., Daxberger, E., & Hernández-Lobato, J. M. (2020). Sample-efficient optimization in the latent space of deep generative models via weighted retraining. Advances in Neural Information Processing Systems, 2020-December.
+- Zheng, L., Karapiperis, K., Kumar, S., & Kochmann, D. M. (2023). Unifying the design space and optimizing linear and nonlinear truss metamaterials by generative modeling. Nature Communications, 14(1). https://doi.org/10.1038/s41467-023-42068-x
+- Siivola, E., Paleyes, A., González, J., & Vehtari, A. (2021). Good practices for Bayesian optimization of high dimensional structured spaces. In Applied AI Letters (Vol. 2, Issue 2). https://doi.org/10.1002/ail2.24
+- Danhaive, R., & Mueller, C. T. (2021). Design subspace learning: Structural design space exploration using performance-conditioned generative modeling. Automation in Construction, 127. https://doi.org/10.1016/j.autcon.2021.103664
 
