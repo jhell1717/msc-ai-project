@@ -4,9 +4,11 @@
 
 Engineering is driven by effective design space exploration and optimisation. Computational tools, such as computational fluid dynamics (CFD), are widely used to replace expensive physical testing by solving physical equations to provide flow field information, including surface pressure fields and velocity profiles. While these simulations provide accurate insights, they are computationally intensive and unsuitable for rapid, iterative design exploration.
 
-One key bottleneck in accelerating design optimisation lies in the complexity of input geometries. Unstructured mesh files, point clouds, and other geometric representations lack simple parameterisation, making it difficult to capture and interpret the defining features of complex geometries. This high-dimensional landscape imposes significant computational burdens and exacerbates the curse of dimensionality, limiting efficient design optimisation.
+One key bottleneck in accelerating design optimisation lies in the complexity of input geometries. Unstructured mesh files, point clouds, and other geometric representations do not lend themselves to simple parameterisations, making it difficult to capture and interpret the defining features of complex geometries. This high-dimensional landscape imposes significant computational burden and exacerbates the curse of dimensionality, limiting efficient design optimisation.
 
-By developing low-dimensional representations of complex shapes, it becomes feasible to apply optimisation methods such as grid search, Monte Carlo methods, and gradient-based algorithms more efficiently. This project investigates how various AI models can encode complex geometries into compact, interpretable representations to enhance design space exploration and optimisation.
+By developing low-dimensional representations of complex shapes, it becomes feasible to apply optimisation methods such as grid search, Monte Carlo methods, and gradient-based algorithms more efficiently. This research project will will investigate how various AI models can encode complex geometries into compact, interpretable representations to enhance design space exploration and optimisation.
+
+Additionally, to supplement the low dimensional representations, methods for interpreting latent variables will be explored which could offer the benefit of providing insight into how navigation through a latent space corresponds to changes in quantities of interest. In Engineering, this would enable sample efficient design optisation, but also to harness this low-dimensional space guide designs towards optimal performance. 
 
 ## Project Objectives
 
@@ -15,6 +17,8 @@ By developing low-dimensional representations of complex shapes, it becomes feas
    - Autoencoders (AEs)
    - Encoder-Decoders
    - Generative Adversarial Networks (GANs)
+   - Diffusion Models
+   - Implicit Neural Representation.
 
 2. **Facilitate Design Space Exploration**: Assess how these learned representations can enable more efficient exploration of geometric quantities of interest for optimisation tasks.
 
@@ -30,6 +34,7 @@ By developing low-dimensional representations of complex shapes, it becomes feas
 
 While industry applications typically focus on 3D geometries, the computational overhead and data availability present unnecessary challenges that obscure the core research aims. By focusing on 2D shapes, this project can systematically explore and compare AI-based encoding methods without being constrained by the computational demands of 3D simulations.
 
+
 ## Significance of the Research
 
 Generative models have become pivotal in engineering due to their ability to compress high-complexity processes into a manageable, low-dimensional search space. This research aims to:
@@ -40,15 +45,9 @@ Generative models have become pivotal in engineering due to their ability to com
 
 The outcomes of this project aim to advance the use of AI-driven geometry encoding for engineering design, offering scalable solutions for rapid and efficient design exploration.
 
-## Repository Structure
+## Motivating Literature
 
-```
-├── data/                  # Datasets and preprocessed geometry files
-├── models/                # Implementation of AE, GAN, and other models
-├── notebooks/             # Jupyter notebooks for exploration and visualization
-├── results/               # Outputs, figures, and analysis
-└── README.md              # Project documentation
-```
+
 
 
 
