@@ -8,7 +8,7 @@ One key bottleneck in accelerating design optimisation lies in the complexity of
 
 By developing low-dimensional representations of complex shapes, it becomes feasible to apply optimisation methods such as grid search, Monte Carlo methods, and gradient-based algorithms more efficiently. This research project will will investigate how various AI models can encode complex geometries into compact, interpretable representations to enhance design space exploration and optimisation.
 
-Additionally, to supplement the low dimensional representations, methods for interpreting latent variables will be explored which could offer the benefit of providing insight into how navigation through a latent space corresponds to changes in quantities of interest. In Engineering, this would enable sample efficient design optisation, but also to harness this low-dimensional space guide designs towards optimal performance. 
+Additionally, to supplement the low dimensional representations, methods for interpreting latent variables will be explored which may offer the benefit of providing insight into how navigation through an n-dimensional latent space corresponds to changes in Quantities of Interest (QoI). In Engineering, this would enable sample efficient design optisation, but also to harness this low-dimensional space guide designs towards optimal performance. 
 
 ## Project Objectives
 
