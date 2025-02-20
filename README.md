@@ -50,34 +50,5 @@ The outcomes of this project aim to advance the use of AI-driven geometry encodi
 └── README.md              # Project documentation
 ```
 
-## Getting Started
 
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/your-username/msc-geometry-optimisation.git
-   cd msc-geometry-optimisation
-   ```
-
-2. Set up the virtual environment:
-
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   pip install -r requirements.txt
-   ```
-
-3. Run initial tests:
-
-   ```bash
-   python train_autoencoder.py
-   ```
-
-## Contributions
-
-Contributions and feedback are welcome. Please open an issue or submit a pull request if you would like to contribute to the project.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more information.
 
