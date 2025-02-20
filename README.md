@@ -35,11 +35,9 @@ Additionally, to supplement the low dimensional representations, methods for int
 While industry applications typically focus on 3D geometries, the computational overhead and data availability present unnecessary challenges that obscure the core research aims. By focusing on 2D shapes, this project can systematically explore and compare AI-based encoding methods without being constrained by the computational demands of 3D simulations.
 
 ## Optimisation Problem
-As part of this research project, a simple optimisation problem will be used to demonstrate the limitations and principles of design space optimisation and the benefits realised by moving the optimisation  problem to a low-dimensional latent space. The optimisation problem chosen will be to minimise the perimeter to area ratio of 2D shapes. This is analogous to a more commonly optimised metric of surface-area to volume ratio which relates to heat from a solid body.
+As part of this research project, a simple optimisation problem will be used to demonstrate the limitations and principles of design space optimisation and the benefits realised by moving the optimisation  problem to a low-dimensional latent space. 
 
-## 📏 Perimeter-to-Area Ratio (P/A Ratio)
-
-The **Perimeter-to-Area Ratio** is a geometric measure that describes the relationship between the perimeter and the area of a 2D shape. It is commonly used to analyze the efficiency of shapes in applications like heat transfer, where minimizing the ratio can reduce heat loss.
+The optimisation problem chosen will be Perimeter-to-Area ratio of 2D shapes. This is analogous to a more commonly optimised metric of **Surface-Area-to-Volume** in 3-dimensions. The **Perimeter-to-Area Ratio** is a geometric measure that describes the relationship between the perimeter and the area of a 2D shape. It is commonly used to analyze the efficiency of shapes in applications like heat transfer, where minimizing the ratio can reduce heat loss.
 
 ### Formula:
 
