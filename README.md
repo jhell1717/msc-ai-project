@@ -1,4 +1,4 @@
-# MSc AI Final Project: Low-Dimensional Geometry Representations for Design Optimisation
+# Enabling Sample Efficient Design Space Exploration through Machine Learning Methods
 
 ## Project Overview
 
