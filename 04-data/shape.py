@@ -79,6 +79,34 @@ class Shape:
         plt.show()
 
 
+# 🔹 Place rotate_points function here:
+def rotate_points(points, angle):
+    """ Rotates the given points by a specified angle (in degrees) around the origin. """
+    theta = np.radians(angle)
+    rotation_matrix = np.array([[np.cos(theta), -np.sin(theta)],
+                                [np.sin(theta), np.cos(theta)]])
+    return points @ rotation_matrix.T
+
+
+# 🔹 Then define the RotatedShape class
+class RotatedShape(Shape):
+    def __init__(self, base_shape, max_rotation=360):
+        """
+        Rotates a given shape by a random angle.
+
+        Parameters
+        ----------
+        base_shape : Shape
+            The shape to rotate.
+        max_rotation : float
+            Maximum rotation angle in degrees.
+        """
+        angle = np.random.uniform(
+            0, max_rotation)  # Pick a random rotation angle
+        rotated_points = rotate_points(base_shape.points, angle)
+        super().__init__(rotated_points, len(rotated_points))
+
+
 class Circle(Shape):
     def __init__(self, radius=None, n_points=50):
         """
@@ -98,9 +126,10 @@ class Circle(Shape):
         points = np.column_stack(
             (radius * np.cos(theta), radius * np.sin(theta)))
         super().__init__(points, n_points)
-        
+
+
 class Triangle(Shape):
-    
+
     def __init__(self, n_points=50, vertices=None):
         """
         A triangle defined by three vertices, resampled to a fixed number of points.
@@ -144,3 +173,125 @@ class Triangle(Shape):
         v1 = points[1] - points[0]
         v2 = points[2] - points[0]
         return np.abs(np.cross(v1, v2)) > 1e-6
+
+
+class Rectangle(Shape):
+    def __init__(self, width=None, height=None, n_points=100):
+        width = width or np.random.uniform(0.5, 1.5)
+        height = height or np.random.uniform(0.5, 1.5)
+        points = np.array([[-width/2, -height/2], [width/2, -height/2],
+                           [width/2, height/2], [-width/2, height/2]])
+        super().__init__(points, n_points)
+
+
+class Diamond(Shape):
+
+    def __init__(self, width=None, height=None, n_points=50):
+        if width is None:
+            width = np.random.uniform(0.1, 0.5)
+        if height is None:
+            height = np.random.uniform(0.5, 1)
+        points = np.array(
+            [[0, -height / 2], [width / 2, 0], [0, height / 2], [-width / 2, 0]]
+        )
+        super().__init__(points, n_points)
+
+
+class Heart(Shape):
+
+    def __init__(self, scale=1, n_points=100):
+        t = np.linspace(0, 2 * np.pi, n_points)
+        x = scale * (16 * np.sin(t) ** 3)
+        y = scale * (
+            13 * np.cos(t) - 5 * np.cos(2 * t) - 2 *
+            np.cos(3 * t) - np.cos(4 * t)
+        )
+        points = np.column_stack((x, y))
+        super().__init__(points, n_points)
+
+
+class Oval(Shape):
+
+    def __init__(self, major_axis=None, minor_axis=None, n_points=50):
+        if major_axis is None:
+            major_axis = np.random.uniform(1, 2)
+        if minor_axis is None:
+            minor_axis = np.random.uniform(0.5, 1)
+        theta = np.linspace(0, 2 * np.pi, n_points)
+        x = major_axis / 2 * np.cos(theta)
+        y = minor_axis / 2 * np.sin(theta)
+        points = np.column_stack((x, y))
+        super().__init__(points, n_points)
+
+
+class Pentagon(Shape):
+
+    def __init__(self, radius=None, n_points=50):
+        if radius is None:
+            radius = np.random.uniform(0.1, 1)
+        theta = np.linspace(0, 2 * np.pi, 6, endpoint=True)
+        points = np.column_stack(
+            (radius * np.cos(theta), radius * np.sin(theta)))[:-1]
+        super().__init__(points, n_points)
+
+
+class Star(Shape):
+
+    def __init__(self, n_arms=None, outer_radius=None, inner_radius=None, n_points=50):
+        """
+        A star shape with alternating inner and outer points.
+
+        Parameters
+        ----------
+        n_arms : int
+            Number of arms on the star.
+
+        outer_radius : float
+            Radius of the outer points.
+
+        n_points : int
+            Number of points to resample the star shape to.
+        """
+        if n_arms is None:
+            n_arms = np.random.randint(5, 10)
+        if outer_radius is None:
+            outer_radius = np.random.uniform(0.1, 1)
+            inner_radius = outer_radius / np.random.uniform(1.5, 4)
+
+        theta = np.linspace(0, 2 * np.pi, n_arms * 2, endpoint=False)
+        radii = np.array(
+            [outer_radius if i % 2 == 0 else inner_radius for i in range(len(theta))]
+        )
+        points = np.column_stack((radii * np.cos(theta), radii * np.sin(theta)))
+        super().__init__(points, n_points)
+
+
+class NoisyShape(Shape):
+    def __init__(self, shape, noise_level=0.05, noise_fraction=0.3):
+        """
+        Apply random noise to a subset of points in a given shape.
+
+        Parameters
+        ----------
+        shape : Shape
+            The shape to which noise will be applied.
+
+        noise_level : float
+            The maximum amount of random noise added to each selected point.
+
+        noise_fraction : float
+            Fraction of points to perturb (0 to 1).
+        """
+        points = shape.points.copy()
+        num_points = len(points)
+
+        # Randomly select a fraction of points to modify
+        num_noisy_points = int(noise_fraction * num_points)
+        indices = np.random.choice(num_points, num_noisy_points, replace=False)
+
+        # Apply random perturbations to selected points
+        noise = np.random.uniform(-noise_level,
+                                  noise_level, size=(num_noisy_points, 2))
+        points[indices] += noise
+
+        super().__init__(points, n_points=num_points)
